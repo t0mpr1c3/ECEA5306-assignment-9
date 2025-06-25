@@ -2,6 +2,7 @@ SHELL := /bin/sh
 CC := $(CROSS_COMPILE)gcc
 CFLAGS := -Wall -Werror
 TARGET := aesdsocket
+SCRIPT := aesdsocket-start-stop
 SRC := aesdsocket.c
 OBJ := $(SRC:.c=.o)
 DESTDIR := $(dirname $0)/..
@@ -21,4 +22,5 @@ clean:
 
 .PHONY: install
 install:
-	mv $(TARGET) $(DESTDIR)/server
+	mv $(TARGET) $(DESTDIR)/usr/bin
+	cp $(SCRIPT) $(DESTDIR)/etc/init.d/S99aesdsocket
