@@ -5,19 +5,20 @@
 #
 ##############################################################
 
-LDD_VERSION = '5c3cae6ddc96b8645dfa6f6bc4ddbba08aae8789a'
-LDD_SITE = 'git@github.com:cu-ecen-aeld/ldd3.git'
+LDD_VERSION = d884979ba185c36faab91b4c76c3c60f810f7c6a
+LDD_SITE = git@github.com:t0mpr1c3/ECEA5306-assignment-7
 LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES
-KERNEL_OPTS = "KERNELDIR=../buildroot"
 
 define LDD_BUILD_CMDS
-	echo "D" ${D}
-	echo "K" $(KERNELDIR)
-	cd ${D}/misc-modules
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) $(KERNEL_OPTS) modules
-	cd ${D}/scull
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) $(KERNEL_OPTS) modules
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/misc-modules
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/scull
 endef
 
+define LDD_INSTALL_TARGET_CMDS
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/misc-modules modules_install
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/scull modules_install
+endef
+
+$(eval $(kernel-module))
 $(eval $(generic-package))
