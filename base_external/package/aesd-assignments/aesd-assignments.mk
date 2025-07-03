@@ -5,8 +5,8 @@
 #
 ##############################################################
 
-AESD_ASSIGNMENTS_VERSION = 'a74c7af1894aeebaf53972bb5d02d8440932bcd6'
-AESD_ASSIGNMENTS_SITE = 'git@github.com:t0mpr1c3/ECEA5305-assignment-5-t0mpr1c3'
+AESD_ASSIGNMENTS_VERSION = a74c7af1894aeebaf53972bb5d02d8440932bcd6
+AESD_ASSIGNMENTS_SITE = git@github.com:t0mpr1c3/ECEA5305-assignment-5
 AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
 
