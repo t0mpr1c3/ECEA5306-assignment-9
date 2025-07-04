@@ -1,0 +1,5 @@
+#!/bin/sh
+module=hello
+
+echo "removing ${module} module"
+rmmod $module || exit 1
