@@ -1,0 +1,5 @@
+
+config BR2_PACKAGE_AESD_CHAR_DRIVER
+	bool "aesd-char-driver"
+	help
+	  Includes the source files for the AESD character driver

@@ -1,8 +1,0 @@
-#!/bin/sh
-module=hello
-mode="664"
-
-set -e
-
-echo "Load ${module} module, exit on failure"
-modprobe $module $* || exit 1
