@@ -28,5 +28,11 @@ then
 else
 	echo "USING EXISTING BUILDROOT CONFIG"
 	echo "To force update, delete .config or make changes using make menuconfig and build again."
+
+	# force install of INITRAMFS image
+	echo "forcing install of cross-compiled Linux image"
+	eval $(grep BR2_LINUX_KERNEL_VERSION buildroot/.config)
+	rm -f buildroot/output/build/linux-${BR2_LINUX_KERNEL_VERSION}/.stamp_images_installed
+
 	FORCE_UNSAFE_CONFIGURE=1 make -C buildroot BR2_EXTERNAL=${EXTERNAL_REL_BUILDROOT}
 fi
