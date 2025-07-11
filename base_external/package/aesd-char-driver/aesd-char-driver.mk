@@ -5,7 +5,7 @@
 #
 ##############################################################
 
-AESD_CHAR_DRIVER_VERSION = assignment-9-complete
+AESD_CHAR_DRIVER_VERSION = 365c209
 AESD_CHAR_DRIVER_SITE = git@github.com:t0mpr1c3/ECEA5305-assignments-3-and-later
 AESD_CHAR_DRIVER_SITE_METHOD = git
 AESD_CHAR_DRIVER_GIT_SUBMODULES = YES
